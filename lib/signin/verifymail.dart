@@ -265,13 +265,18 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                             () {
                               hasError = false;
                               snackBar("OTP Verified!!");
-                               Navigator.pushAndRemoveUntil(
+                              /* Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const MapScreen()),
                                     ((route) => false)
-                              ); 
-                             /*  Navigator.push(
+                              );  */
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MapScreen()),
+                              );
+                              /*  Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => PlacePicker(

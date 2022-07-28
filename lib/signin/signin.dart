@@ -183,11 +183,16 @@ class _signinState extends State<signin> {
                     borderRadius: BorderRadius.circular(10)),
                 child: FlatButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
+                      /* Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const varifymail()),
                             (route) => false,
+                      ); */
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const varifymail()),
                       );
                     },
                     child: Text(
