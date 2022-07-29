@@ -8,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:location/location.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/constant.dart';
+import 'package:zataraapp/homepage/Notification.dart';
 import 'package:zataraapp/homepage/account.dart';
 import 'package:zataraapp/homepage/hot.dart';
 import 'package:zataraapp/homepage/menu.dart';
@@ -162,9 +163,18 @@ class _MapScreenState extends State<MapScreen> {
                       height: 15,
                     ),
                   ),
-                  Image.asset(
-                    'assets/icons/bell.png',
-                    height: 20,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const newNotifcation()),
+                      );
+                    },
+                    child: Image.asset(
+                      'assets/icons/bell.png',
+                      height: 20,
+                    ),
                   )
                 ],
               ),

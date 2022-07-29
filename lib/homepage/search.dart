@@ -33,6 +33,328 @@ class _SearchState extends State<Search> {
           height: 2.h,
         ),
         _showSearchBox(),
+        Container(
+          padding: EdgeInsets.only(left: 45, top: 2.h),
+          alignment: Alignment.topLeft,
+          child: Text(
+            'People searched for',
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+          ),
+        ),
+        Container(
+          width: 85.w,
+          height: 5.h,
+          child: ListTile(
+            leading: Icon(Icons.search),
+            title: Text(
+              'Elecriclan',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: HexColor('#616161')),
+            ),
+            trailing: Image.asset(
+              'assets/icons/arrow.png',
+              height: 15,
+            ),
+          ),
+        ),
+        Container(
+          width: 85.w,
+          height: 5.h,
+          child: ListTile(
+            leading: Icon(Icons.search),
+            title: Text(
+              'Tasker near me',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: HexColor('#616161')),
+            ),
+            trailing: Image.asset(
+              'assets/icons/arrow.png',
+              height: 15,
+            ),
+          ),
+        ),
+        Container(
+          width: 85.w,
+          height: 5.h,
+          child: ListTile(
+            leading: Icon(Icons.search),
+            title: Text(
+              'Compurter Ergineer',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: HexColor('#616161')),
+            ),
+            trailing: Image.asset(
+              'assets/icons/arrow.png',
+              height: 15,
+            ),
+          ),
+        ),
+        Container(
+          width: 85.w,
+          height: 5.h,
+          child: ListTile(
+            leading: Icon(Icons.search),
+            title: Text(
+              'Free ride',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: HexColor('#616161')),
+            ),
+            trailing: Image.asset(
+              'assets/icons/arrow.png',
+              height: 15,
+            ),
+          ),
+        ),
+        Container(
+          width: 85.w,
+          height: 5.h,
+          child: ListTile(
+            leading: Icon(Icons.search),
+            title: Text(
+              'Elecriclan',
+              style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  color: HexColor('#616161')),
+            ),
+            trailing: Image.asset(
+              'assets/icons/arrow.png',
+              height: 15,
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 45, top: 3.h),
+          alignment: Alignment.topLeft,
+          child: Text(
+            'Popular categaries',
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+          ),
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+        Container(
+          width: 78.w,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: 45.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/shopping.png',
+                      height: 20,
+                    ),
+                    Text(
+                      'Shopping',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: HexColor('#616161')),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 31.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/food.png',
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        'Food',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: HexColor('#616161')),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        Container(
+          width: 78.w,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: 24.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/books.png',
+                      height: 20,
+                    ),
+                    Text(
+                      'Books',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: HexColor('#616161')),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 27.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/food.png',
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        'Hospital',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: HexColor('#616161')),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 24.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/food.png',
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        'Movie',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: HexColor('#616161')),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        Container(
+          width: 78.w,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: 45.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/sport.png',
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        'Sports',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: HexColor('#616161')),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                width: 31.w,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4')),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/icons/coffee.png',
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        'Coffee',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                            color: HexColor('#616161')),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     ));
   }
