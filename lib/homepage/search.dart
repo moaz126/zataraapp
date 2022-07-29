@@ -22,9 +22,61 @@ class _SearchState extends State<Search> {
         body: Column(
       children: [
         Container(
-          child: Image.asset('assets/icons/back.png'),
-        )
+          padding: EdgeInsets.only(top: 40, left: 45),
+          alignment: Alignment.bottomLeft,
+          child: Image.asset(
+            'assets/icons/back.png',
+            height: 15,
+          ),
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+        _showSearchBox(),
       ],
     ));
+  }
+
+  _showSearchBox() {
+    return Container(
+      width: 75.w,
+      decoration: BoxDecoration(
+          color: HexColor('#F2F2F4'), borderRadius: BorderRadius.circular(10)),
+      child: Stack(
+        alignment: Alignment.topRight,
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Search()),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: TextField(
+                  decoration: InputDecoration(
+                      border: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      hintText: 'Cake & Fish',
+                      hintStyle: TextStyle(
+                          color: HexColor('#616161'),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14))),
+            ),
+          ),
+          Container(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+                color: primary, borderRadius: BorderRadius.circular(10)),
+            child: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
