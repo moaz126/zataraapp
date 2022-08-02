@@ -9,6 +9,7 @@ import 'package:sizer/sizer.dart';
 import 'package:zataraapp/homepage/menu.dart';
 import 'package:zataraapp/signin/signin.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+import 'package:zataraapp/signin/sucessbox.dart';
 
 import '../homepage/home.dart';
 
@@ -261,18 +262,36 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         setState(
                           () {
                             hasError = false;
-                            snackBar("OTP Verified!!");
+
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return SuccessDialogBox(
+                                  message: 'Login Successfully ',
+                                  function: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => MapScreen(),
+                                        ));
+                                  },
+                                );
+                              },
+                            );
+                            /*   snackBar("OTP Verified!!"); */
+
                             /* Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MapScreen()),
                                   ((route) => false)
                             );  */
-                            Navigator.push(
+                            /*    Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MapScreen()),
-                            );
+                            ); */
                             /*  Navigator.push(
                                 context,
                                 MaterialPageRoute(

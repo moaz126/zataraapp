@@ -60,6 +60,15 @@ class _MapScreenState extends State<MapScreen> {
         await getBytesFromAsset('assets/icons/past2.png', 60);
     final Uint8List markerIcon3 =
         await getBytesFromAsset('assets/icons/past.png', 60);
+
+    final Uint8List markerIcon4 =
+        await getBytesFromAsset('assets/icons/map3.png', 60);
+
+    final Uint8List markerIcon5 =
+        await getBytesFromAsset('assets/icons/map4.png', 60);
+
+    final Uint8List markerIcon6 =
+        await getBytesFromAsset('assets/icons/map5.png', 60);
     var location = await currentLocation.getLocation();
     currentLocation.onLocationChanged.listen((LocationData loc) {
       _controller
@@ -93,7 +102,7 @@ class _MapScreenState extends State<MapScreen> {
                 action = false;
               });
             },
-            icon: BitmapDescriptor.fromBytes(markerIcon1),
+            icon: BitmapDescriptor.fromBytes(markerIcon4),
             markerId: MarkerId('new1'),
             position: LatLng(31.432684, 73.127164)));
 
@@ -106,7 +115,7 @@ class _MapScreenState extends State<MapScreen> {
             },
             icon: BitmapDescriptor.fromBytes(markerIcon2),
             markerId: MarkerId('new2'),
-            position: LatLng(31.434976, 73.127836)));
+            position: LatLng(31.435428, 73.129413)));
 
         _markers.add(Marker(
             onTap: () {
@@ -115,9 +124,31 @@ class _MapScreenState extends State<MapScreen> {
                 action = false;
               });
             },
-            icon: BitmapDescriptor.fromBytes(markerIcon3),
+            icon: BitmapDescriptor.fromBytes(markerIcon4),
             markerId: MarkerId('new3'),
-            position: LatLng(31.434475, 73.124897)));
+            position: LatLng(31.437812, 73.12983)));
+
+        _markers.add(Marker(
+            onTap: () {
+              setState(() {
+                showbox = true;
+                action = false;
+              });
+            },
+            icon: BitmapDescriptor.fromBytes(markerIcon5),
+            markerId: MarkerId('new4'),
+            position: LatLng(31.432354, 73.121249)));
+
+        _markers.add(Marker(
+            onTap: () {
+              setState(() {
+                showbox = true;
+                action = false;
+              });
+            },
+            icon: BitmapDescriptor.fromBytes(markerIcon6),
+            markerId: MarkerId('new5'),
+            position: LatLng(31.43873, 73.126844)));
       });
     });
   }
@@ -183,7 +214,7 @@ class _MapScreenState extends State<MapScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 40.0, left: 40, right: 50),
+                padding: const EdgeInsets.only(top: 48.0, left: 32, right: 30),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -320,6 +351,7 @@ class _MapScreenState extends State<MapScreen> {
                         onTap: () {
                           setState(() {
                             hot1 = false;
+                            y = true;
                           });
                           Navigator.push(
                             context,

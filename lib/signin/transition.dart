@@ -9,6 +9,7 @@ import 'package:zataraapp/constant.dart';
 import 'package:zataraapp/signin/phoneno.dart';
 import 'package:zataraapp/signin/verifymail.dart';
 import 'package:zataraapp/signin/verifyphone.dart';
+import 'package:zataraapp/signup/signuptransition.dart';
 import 'package:zataraapp/signup/varifyCode.dart';
 
 class Transition extends StatefulWidget {
@@ -455,7 +456,11 @@ class _TransitionState extends State<Transition> {
                       padding: const EdgeInsets.only(left: 2.0),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const signuptransition()),
+                          );
                         },
                         child: Text(
                           'Sign up',

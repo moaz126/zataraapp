@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 import 'package:zataraapp/homepage/home.dart';
 import 'package:zataraapp/homepage/menu.dart';
 import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/sucessbox.dart';
 
 class varifyphone extends StatefulWidget {
   const varifyphone({Key? key}) : super(key: key);
@@ -259,11 +260,21 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         setState(
                           () {
                             hasError = false;
-                            snackBar("OTP Verified!!");
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const MapScreen()),
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return SuccessDialogBox(
+                                  message: 'Login Successfully ',
+                                  function: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => MapScreen(),
+                                        ));
+                                  },
+                                );
+                              },
                             );
                           },
                         );

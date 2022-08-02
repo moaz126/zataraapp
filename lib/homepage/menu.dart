@@ -284,7 +284,7 @@ class _MenuState extends State<Menu> {
                                           ),
                                           Padding(
                                             padding: const EdgeInsets.only(
-                                                right: 18.0, top: 3),
+                                                right: 18.0, top: 3, bottom: 5),
                                             child: Container(
                                               alignment: Alignment.topLeft,
                                               width: 50.w,
@@ -293,7 +293,7 @@ class _MenuState extends State<Menu> {
                                                 "${products[index].subtitle}",
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w400,
-                                                    fontSize: 8,
+                                                    fontSize: 9,
                                                     color: HexColor('#616161')),
                                               ),
                                             ),
@@ -332,7 +332,7 @@ class _MenuState extends State<Menu> {
                                                           },
                                                         ),
                                                         SizedBox(
-                                                          height: 15,
+                                                          height: 10,
                                                         ),
                                                         Padding(
                                                           padding:

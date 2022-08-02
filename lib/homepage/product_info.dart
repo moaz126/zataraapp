@@ -226,7 +226,7 @@ class _product_infoState extends State<product_info> {
             ),
             Container(
               child: Padding(
-                padding: const EdgeInsets.only(left: 60),
+                padding: const EdgeInsets.only(left: 35),
                 child: Row(
                   children: [
                     Container(

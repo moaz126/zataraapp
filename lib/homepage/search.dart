@@ -61,7 +61,7 @@ class _SearchState extends State<Search> {
               contentPadding: EdgeInsets.only(left: 0, right: 3.w),
               leading: Icon(Icons.search),
               title: Text(
-                'Elecriclan',
+                'Electrician',
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -80,7 +80,7 @@ class _SearchState extends State<Search> {
               contentPadding: EdgeInsets.only(left: 0, right: 3.w),
               leading: Icon(Icons.search),
               title: Text(
-                'Tasker near me',
+                'Task near me',
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -99,7 +99,7 @@ class _SearchState extends State<Search> {
               contentPadding: EdgeInsets.only(left: 0, right: 3.w),
               leading: Icon(Icons.search),
               title: Text(
-                'Compurter Ergineer',
+                'Computer Engineer',
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -137,7 +137,7 @@ class _SearchState extends State<Search> {
               contentPadding: EdgeInsets.only(left: 0, right: 3.w),
               leading: Icon(Icons.search),
               title: Text(
-                'Elecriclan',
+                'Electrician',
                 style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
@@ -176,8 +176,11 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/icons/shopping.png',
+                        'assets/icons/online-shopping.png',
                         height: 20,
+                      ),
+                      SizedBox(
+                        width: 4,
                       ),
                       Text(
                         'Shopping',
@@ -262,7 +265,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/icons/food.png',
+                        'assets/icons/hospital.png',
                         height: 15,
                       ),
                       Padding(
@@ -289,7 +292,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/icons/food.png',
+                        'assets/icons/movie.png',
                         height: 15,
                       ),
                       Padding(

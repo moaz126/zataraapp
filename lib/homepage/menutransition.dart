@@ -274,7 +274,9 @@ class _transitionmenuState extends State<transitionmenu> {
                                             ),
                                             Padding(
                                               padding: const EdgeInsets.only(
-                                                  right: 18.0, top: 3),
+                                                  right: 18.0,
+                                                  top: 3,
+                                                  bottom: 5),
                                               child: Container(
                                                 alignment: Alignment.topLeft,
                                                 width: 50.w,
@@ -284,7 +286,7 @@ class _transitionmenuState extends State<transitionmenu> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w400,
-                                                      fontSize: 8,
+                                                      fontSize: 9,
                                                       color:
                                                           HexColor('#616161')),
                                                 ),
@@ -327,7 +329,7 @@ class _transitionmenuState extends State<transitionmenu> {
                                                             },
                                                           ),
                                                           SizedBox(
-                                                            height: 15,
+                                                            height: 10,
                                                           ),
                                                           Padding(
                                                             padding:

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/constant.dart';
+import 'package:zataraapp/signin/transition.dart';
+import 'package:zataraapp/signup/signuptransition.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -10,16 +12,18 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          toolbarHeight: 25,
           leading: Padding(
-            padding: const EdgeInsets.only(top: 17, left: 19),
+            padding: const EdgeInsets.only(top: 10, left: 19),
             child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios_rounded,
-                  color: primary,
-                )),
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset(
+                'assets/icons/back.png',
+                height: 10,
+              ),
+            ),
           ),
           backgroundColor: Colors.white,
           elevation: 0,
@@ -189,7 +193,13 @@ class AccountPage extends StatelessWidget {
                             width: 30,
                           ),
                           InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Transition()),
+                                );
+                              },
                               child: Text(
                                 'Log Out',
                                 style: TextStyle(

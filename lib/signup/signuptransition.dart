@@ -2,6 +2,7 @@ import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_picker_dropdown.dart';
 import 'package:country_pickers/utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/signin/phoneno.dart';
@@ -26,440 +27,471 @@ class _signuptransitionState extends State<signuptransition> {
   String cntry = '86';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 12.h,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 3.h, bottom: 1.h),
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Create your account",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                      fontFamily: 'poppins',
-                      color: HexColor("#FF2501")),
+    return WillPopScope(
+      onWillPop: () async {
+        final shouldPop = await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Do you want to go back?'),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    SystemNavigator.pop();
+                  },
+                  child: const Text('Yes'),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 3.h, bottom: 3.h),
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "To use your account, you create an account first.",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      color: HexColor("#616161")),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                  child: const Text('No'),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                width: 85.w,
-                height: 47,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: HexColor('#F2F2F4'),
+              ],
+            );
+          },
+        );
+        return shouldPop!;
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 12.h,
                 ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 42.w,
-                      height: 41,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9),
-                          color: show == true ? HexColor('#FF2501') : second),
-                      child: FlatButton(
-                          onPressed: () {
-                            setState(() {
-                              show = true;
-                            });
-                          },
-                          child: Text(
-                            "E-mail",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: show == true
-                                    ? HexColor('#FFFFFF')
-                                    : HexColor('#616161')),
-                          )),
-                    ),
-                    Container(
-                      width: 42.w,
-                      height: 41,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9),
-                        color: show == false ? HexColor('#FF2501') : second,
-                      ),
-                      child: FlatButton(
-                          onPressed: () {
-                            setState(() {
-                              show = false;
-                            });
-                          },
-                          child: Text(
-                            "Phone Number",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                color: show == false
-                                    ? HexColor('#FFFFFF')
-                                    : HexColor('#616161')),
-                          )),
-                    ),
-                  ],
-                ),
-              ),
-              show == true
-                  ? Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 27),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 6.5.h,
-                            width: 85.w,
-                            decoration: BoxDecoration(
-                                color: HexColor('#F2F2F4'),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 1),
-                              child: TextField(
-                                style: TextStyle(color: HexColor('#616161')),
-                                decoration: InputDecoration(
-                                  hintText: '   E-mail',
-                                  hintStyle: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: HexColor('#616161')),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 18),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 6.5.h,
-                            width: 85.w,
-                            decoration: BoxDecoration(
-                                color: HexColor('#F2F2F4'),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: TextField(
-                                style: TextStyle(color: HexColor('#616161')),
-                                decoration: InputDecoration(
-                                  hintText: '   Username',
-                                  hintStyle: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: HexColor('#616161')),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 18),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 6.5.h,
-                            width: 85.w,
-                            decoration: BoxDecoration(
-                                color: HexColor('#F2F2F4'),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: TextField(
-                                style: TextStyle(color: HexColor('#616161')),
-                                decoration: InputDecoration(
-                                  hintText: '   Password',
-                                  hintStyle: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: HexColor('#616161')),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 18),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 6.5.h,
-                            width: 85.w,
-                            decoration: BoxDecoration(
-                                color: HexColor('#F2F2F4'),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: TextField(
-                                style: TextStyle(color: HexColor('#616161')),
-                                decoration: InputDecoration(
-                                  hintText: '   Repeat password',
-                                  hintStyle: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: HexColor('#616161')),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  : Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 45),
-                          child: Container(
-                            //height: 6.5.h,
-                            width: 85.w,
-                            decoration: BoxDecoration(
-                                color: HexColor('#F2F2F4'),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: _buildCountryPickerDropdownSoloExpanded(),
-                            ),
-                          ),
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 38, left: 26),
-                              child: Container(
-                                width: 20.w,
-                                height: 6.5.h,
-                                //width: 20.w,
-                                decoration: BoxDecoration(
-                                    color: HexColor('#F2F2F4'),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 20, right: 20),
-                                  /*  child: DropdownButton(
-                          // Initial Value
-                          value: dropdownvalue,
-                          iconSize: 0.0,
-                          isDense: false,
-    
-                          underline: SizedBox(),
-                          // Down Arrow Icon
-                          icon: const Icon(Icons.keyboard_arrow_down),
-    
-                          // Array list of items
-                          items: items.map((String items) {
-                            return DropdownMenuItem(
-                              value: items,
-                              child: Text(
-                                '+' + items,
-                                style: TextStyle(color: HexColor('#616161')),
-                              ),
-                            );
-                          }).toList(),
-                          // After selecting the desired option,it will
-                          // change button value to selected value
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              dropdownvalue = newValue!;
-                            });
-                          },
-                        ), */
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      '+' + cntry,
-                                      style:
-                                          TextStyle(color: HexColor('#616161')),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 38, left: 10, bottom: 19),
-                              child: Container(
-                                alignment: Alignment.center,
-                                height: 6.5.h,
-                                width: 62.5.w,
-                                decoration: BoxDecoration(
-                                    color: HexColor('#F2F2F4'),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: TextField(
-                                    keyboardType: TextInputType.number,
-                                    decoration: InputDecoration(
-                                      hintText: '123456789',
-                                      hintStyle: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: HexColor('#616161')),
-                                      border: InputBorder.none,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-              Padding(
-                padding: const EdgeInsets.only(top: 18),
-                child: Container(
-                  height: 6.5.h,
-                  width: 85.w,
-                  decoration: BoxDecoration(
-                      color: HexColor('#FF2501'),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: FlatButton(
-                      onPressed: () {
-                        show == true
-                            ? Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const VarifyCode()),
-                              )
-                            : Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const phonevarifycode()),
-                              );
-                      },
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: HexColor('#FFFFFF'),
-                        ),
-                      )),
-                ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                      child: Container(
-                    margin: const EdgeInsets.only(left: 28.0, right: 5.0),
-                    child: Divider(
-                      height: 43,
-                      color: HexColor('#616161'),
-                    ),
-                  )),
-                  Text(
-                    'Sign in with',
+                Container(
+                  padding: EdgeInsets.only(left: 3.h, bottom: 1.h),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Create your account",
                     style: TextStyle(
-                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        fontFamily: 'poppins',
+                        color: HexColor("#FF2501")),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 3.h, bottom: 3.h),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "To use your account, you create an account first.",
+                    style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        color: HexColor('#616161')),
+                        fontSize: 12,
+                        color: HexColor("#616161")),
                   ),
-                  Expanded(
-                      child: Container(
-                    margin: const EdgeInsets.only(left: 5.0, right: 28.0),
-                    child: Divider(
-                      color: HexColor('#616161'),
-                    ),
-                  )),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(26, 0, 0, 0),
-                    child: Container(
-                      height: 6.5.h,
-                      width: 27.w,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: HexColor('#F2F2F4')),
-                      child: Image.asset(
-                        'assets/icons/google.png',
-                        scale: 0.5.h,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 85.w,
+                  height: 47,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: HexColor('#F2F2F4'),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 42.w,
+                        height: 41,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(9),
+                            color: show == true ? HexColor('#FF2501') : second),
+                        child: FlatButton(
+                            onPressed: () {
+                              setState(() {
+                                show = true;
+                              });
+                            },
+                            child: Text(
+                              "E-mail",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: show == true
+                                      ? HexColor('#FFFFFF')
+                                      : HexColor('#616161')),
+                            )),
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(7, 0, 0, 0),
-                    child: Container(
-                        height: 6.5.h,
-                        width: 27.w,
+                      Container(
+                        width: 42.w,
+                        height: 41,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: HexColor('#4267B2')),
-                        child: Image.asset(
-                          'assets/icons/facebook.png',
-                          scale: 0.5.h,
-                        )),
+                          borderRadius: BorderRadius.circular(9),
+                          color: show == false ? HexColor('#FF2501') : second,
+                        ),
+                        child: FlatButton(
+                            onPressed: () {
+                              setState(() {
+                                show = false;
+                              });
+                            },
+                            child: Text(
+                              "Phone Number",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: show == false
+                                      ? HexColor('#FFFFFF')
+                                      : HexColor('#616161')),
+                            )),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(7, 0, 0, 0),
-                    child: Container(
-                        height: 6.5.h,
-                        width: 27.w,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: HexColor('#000000')),
-                        child: Image.asset(
-                          'assets/icons/apple.png',
-                          scale: 0.5.h,
-                        )),
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 28),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account?',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12,
-                          color: HexColor('#616161')),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 2.0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Transition()),
-                          );
+                ),
+                show == true
+                    ? Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 27),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 6.5.h,
+                              width: 85.w,
+                              decoration: BoxDecoration(
+                                  color: HexColor('#F2F2F4'),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, top: 1),
+                                child: TextField(
+                                  style: TextStyle(color: HexColor('#616161')),
+                                  decoration: InputDecoration(
+                                    hintText: '   E-mail',
+                                    hintStyle: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: HexColor('#616161')),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 18),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 6.5.h,
+                              width: 85.w,
+                              decoration: BoxDecoration(
+                                  color: HexColor('#F2F2F4'),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: TextField(
+                                  style: TextStyle(color: HexColor('#616161')),
+                                  decoration: InputDecoration(
+                                    hintText: '   Username',
+                                    hintStyle: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: HexColor('#616161')),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 18),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 6.5.h,
+                              width: 85.w,
+                              decoration: BoxDecoration(
+                                  color: HexColor('#F2F2F4'),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: TextField(
+                                  style: TextStyle(color: HexColor('#616161')),
+                                  decoration: InputDecoration(
+                                    hintText: '   Password',
+                                    hintStyle: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: HexColor('#616161')),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 18),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 6.5.h,
+                              width: 85.w,
+                              decoration: BoxDecoration(
+                                  color: HexColor('#F2F2F4'),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: TextField(
+                                  style: TextStyle(color: HexColor('#616161')),
+                                  decoration: InputDecoration(
+                                    hintText: '   Repeat password',
+                                    hintStyle: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        color: HexColor('#616161')),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 45),
+                            child: Container(
+                              //height: 6.5.h,
+                              width: 85.w,
+                              decoration: BoxDecoration(
+                                  color: HexColor('#F2F2F4'),
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child:
+                                    _buildCountryPickerDropdownSoloExpanded(),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 38, left: 26),
+                                child: Container(
+                                  width: 20.w,
+                                  height: 6.5.h,
+                                  //width: 20.w,
+                                  decoration: BoxDecoration(
+                                      color: HexColor('#F2F2F4'),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 20, right: 20),
+                                    /*  child: DropdownButton(
+                            // Initial Value
+                            value: dropdownvalue,
+                            iconSize: 0.0,
+                            isDense: false,
+      
+                            underline: SizedBox(),
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+      
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(
+                                  '+' + items,
+                                  style: TextStyle(color: HexColor('#616161')),
+                                ),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ), */
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: Text(
+                                        '+' + cntry,
+                                        style: TextStyle(
+                                            color: HexColor('#616161')),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 38, left: 10, bottom: 19),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 6.5.h,
+                                  width: 62.5.w,
+                                  decoration: BoxDecoration(
+                                      color: HexColor('#F2F2F4'),
+                                      borderRadius: BorderRadius.circular(10)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                        hintText: '123456789',
+                                        hintStyle: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color: HexColor('#616161')),
+                                        border: InputBorder.none,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 18),
+                  child: Container(
+                    height: 6.5.h,
+                    width: 85.w,
+                    decoration: BoxDecoration(
+                        color: HexColor('#FF2501'),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: FlatButton(
+                        onPressed: () {
+                          show == true
+                              ? Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const VarifyCode()),
+                                )
+                              : Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const phonevarifycode()),
+                                );
                         },
                         child: Text(
-                          'Sign In',
+                          "Continue",
                           style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 12,
-                              color: HexColor('#FF2501')),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: HexColor('#FFFFFF'),
+                          ),
+                        )),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      margin: const EdgeInsets.only(left: 28.0, right: 5.0),
+                      child: Divider(
+                        height: 43,
+                        color: HexColor('#616161'),
+                      ),
+                    )),
+                    Text(
+                      'Sign in with',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: HexColor('#616161')),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: const EdgeInsets.only(left: 5.0, right: 28.0),
+                      child: Divider(
+                        color: HexColor('#616161'),
+                      ),
+                    )),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(26, 0, 0, 0),
+                      child: Container(
+                        height: 6.5.h,
+                        width: 27.w,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: HexColor('#F2F2F4')),
+                        child: Image.asset(
+                          'assets/icons/google.png',
+                          scale: 0.5.h,
                         ),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 0, 0, 0),
+                      child: Container(
+                          height: 6.5.h,
+                          width: 27.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: HexColor('#4267B2')),
+                          child: Image.asset(
+                            'assets/icons/facebook.png',
+                            scale: 0.5.h,
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(7, 0, 0, 0),
+                      child: Container(
+                          height: 6.5.h,
+                          width: 27.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: HexColor('#000000')),
+                          child: Image.asset(
+                            'assets/icons/apple.png',
+                            scale: 0.5.h,
+                          )),
                     )
                   ],
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 28),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: HexColor('#616161')),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 2.0),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Transition()),
+                            );
+                          },
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 12,
+                                color: HexColor('#FF2501')),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

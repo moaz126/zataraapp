@@ -23,3 +23,7 @@ appButton(String title) {
 
 bool hot1 = false;
 bool transfer = false;
+
+bool x = false;
+bool y = false;
+int z = 0;
