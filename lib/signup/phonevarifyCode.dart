@@ -4,18 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sizer/sizer.dart';
-import 'package:zataraapp/homepage/home.dart';
-import 'package:zataraapp/homepage/menu.dart';
 import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/transition.dart';
 
-class varifyphone extends StatefulWidget {
-  const varifyphone({Key? key}) : super(key: key);
+class phonevarifycode extends StatefulWidget {
+  const phonevarifycode({Key? key}) : super(key: key);
 
   @override
-  _varifyphoneState createState() => _varifyphoneState();
+  _phonevarifycodeState createState() => _phonevarifycodeState();
 }
 
-class _varifyphoneState extends State<varifyphone> {
+class _phonevarifycodeState extends State<phonevarifycode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +107,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 child: RichText(
                   text: TextSpan(
                       text:
-                          "Please type the verification code send to 12345*****",
+                          "Please type the verification code send to ******6789",
                       children: [
                         /* TextSpan(
                             text: "${widget.phoneNumber}",
@@ -143,7 +142,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         length: 6,
                         obscureText: true,
                         obscuringCharacter: '*',
-                        /*  obscuringWidget: const FlutterLogo(
+                        /* obscuringWidget: const FlutterLogo(
                           size: 24,
                         ), */
                         blinkWhenObscuring: true,
@@ -218,7 +217,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 child: TextButton(
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
-                    minimumSize: Size(40, 20),
+                    minimumSize: Size(40, 15),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
                   onPressed: () => snackBar("OTP resend!!"),
@@ -263,7 +262,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const MapScreen()),
+                                  builder: (context) => const Transition()),
                             );
                           },
                         );

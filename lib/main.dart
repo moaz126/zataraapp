@@ -4,6 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:sizer/sizer.dart';
+import 'package:zataraapp/homepage/SplashScreen.dart';
+import 'package:zataraapp/signup/first.dart';
+import 'package:zataraapp/signup/signuptransition.dart';
 
 import 'signup/signup.dart';
 
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           primarySwatch: Colors.blue,
         ),
-        home: const Signup(),
+        home: const SplashScreen(),
       );
     });
   }

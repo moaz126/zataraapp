@@ -4,7 +4,6 @@ import 'package:sizer/sizer.dart';
 
 import '../constant.dart';
 
-
 class orderTracking extends StatefulWidget {
   const orderTracking({Key? key}) : super(key: key);
 
@@ -19,7 +18,11 @@ class _orderTrackingState extends State<orderTracking> {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: Icon(Icons.arrow_back_ios_outlined, color: primary),
+          child: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back_ios_outlined, color: primary)),
         ),
         elevation: 0,
         backgroundColor: Colors.white,
@@ -180,45 +183,50 @@ class _orderTrackingState extends State<orderTracking> {
                   size: 170.0,
                 ),
                 SizedBox(
-                  width: 13 ,
+                  width: 13,
                 ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children : [
-
-                      Image.asset('assets/icons/alerticon.png',height: 14,width: 14,),
+                        children: [
+                          Image.asset(
+                            'assets/icons/alerticon.png',
+                            height: 14,
+                            width: 14,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: Text(
+                              'To open the locker Scan the QR Code or enter the code',
+                            ),
+                          ),
+                        ],
+                      ),
                       SizedBox(
-                        width: 5,
+                        height: 12,
                       ),
-                      Expanded(
-                        child: Text(
-                          'To open the locker Scan the QR Code or enter the code',
-                        ),
-                      ),
-                  ],
-                      ),
-                  SizedBox(
-height: 12,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children : [
-                  Image.asset('assets/icons/alerticon.png',height: 14,width: 14,),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Expanded(
-                        child: Text(
-                          'To open the locker Scan the QR Code or enter the code',
-                        ),
-                      ),
-                  ]
-                  ),
+                      Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/icons/alerticon.png',
+                              height: 14,
+                              width: 14,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'To open the locker Scan the QR Code or enter the code',
+                              ),
+                            ),
+                          ]),
                       SizedBox(
                         height: 15,
                       ),

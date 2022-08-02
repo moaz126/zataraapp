@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:sizer/sizer.dart';
 import 'package:zataraapp/constant.dart';
 
 class newNotifcation extends StatelessWidget {
@@ -10,9 +9,14 @@ class newNotifcation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_ios_rounded,
-          color: primary,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: primary,
+          ),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -29,460 +33,472 @@ class newNotifcation extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView(
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 3.h,
-                          backgroundImage: AssetImage(
-                            'assets/icons/2.png',
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20),
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/2.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/1.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/1.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/3.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/3.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/4.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/4.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/5.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/5.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/6.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/6.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/2.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/2.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/2.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/2.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 30, right: 30),
-                  child: Container(
-                    height: 80,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: HexColor('#F2F2F4')),
-                    child: ListTile(
-                      leading: Padding(
-                        padding: const EdgeInsets.only(bottom: 1),
-                        child: CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            'assets/icons/2.png',
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12.0,
+                    ),
+                    child: Container(
+                      height: 80,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: HexColor('#F2F2F4')),
+                      child: ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 1),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage(
+                              'assets/icons/2.png',
+                            ),
                           ),
                         ),
-                      ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Fish for lunch ',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text('Hot ones offer')
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Text('near by'),
-                                Text(
-                                  ' cake cafa',
-                                  style: TextStyle(
-                                      color: primary,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ],
+                        title: Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Fish for lunch ',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text('Hot ones offer')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('near by'),
+                                  Text(
+                                    ' cake cafa',
+                                    style: TextStyle(
+                                        color: primary,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           )
         ],

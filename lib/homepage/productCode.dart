@@ -4,19 +4,18 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/homepage/Notification.dart';
 import 'package:zataraapp/homepage/menu.dart';
-import 'package:zataraapp/homepage/productCode.dart';
 import 'package:zataraapp/homepage/tracking_id.dart';
 
 import '../constant.dart';
 
-class product_info extends StatefulWidget {
-  const product_info({Key? key}) : super(key: key);
+class product_code extends StatefulWidget {
+  const product_code({Key? key}) : super(key: key);
 
   @override
-  State<product_info> createState() => _product_infoState();
+  State<product_code> createState() => _product_codeState();
 }
 
-class _product_infoState extends State<product_info> {
+class _product_codeState extends State<product_code> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +24,9 @@ class _product_infoState extends State<product_info> {
           children: [
             Stack(
               children: [
-                SizedBox(
+                Container(
                     height: 40.h,
-                    width: 100.w,
+                    width: 390,
                     child: Image.asset(
                       'assets/icons/pas.png',
                       fit: BoxFit.fill,
@@ -101,12 +100,7 @@ class _product_infoState extends State<product_info> {
                       ),
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Menu()),
-                        );
-                      },
+                      onTap: () {},
                       child: Container(
                         child: Row(
                           children: [
@@ -141,7 +135,7 @@ class _product_infoState extends State<product_info> {
               height: 10,
             ),
             Container(
-              height: 50,
+              height: 45,
               width: 298,
               child: Text(
                 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
@@ -150,7 +144,7 @@ class _product_infoState extends State<product_info> {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: 20,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Container(
@@ -195,7 +189,7 @@ class _product_infoState extends State<product_info> {
                             Text(
                               '7000 reviews',
                               style: headingStylelight.copyWith(
-                                  fontSize: 13, color: HexColor('#616161')),
+                                  fontSize: 14, color: HexColor('#616161')),
                             ),
                           ],
                         ),
@@ -281,17 +275,19 @@ class _product_infoState extends State<product_info> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const product_code()),
+                  MaterialPageRoute(
+                      builder: (context) => const orderTracking()),
                 );
               },
               child: Container(
                 height: 47,
                 width: 308,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10), color: Colors.red),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue),
                 child: Center(
                     child: Text(
-                  'Book Now',
+                  '231254',
                   style: TextStyle(color: Colors.white, fontSize: 14),
                 )),
               ),

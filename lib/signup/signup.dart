@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/signin/phoneno.dart';
 import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/transition.dart';
 import 'package:zataraapp/signup/varifyCode.dart';
 
 class Signup extends StatefulWidget {
@@ -42,7 +43,7 @@ class _SignupState extends State<Signup> {
                   "To use your account, you create an account first.",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 11,
+                      fontSize: 12,
                       color: HexColor("#616161")),
                 ),
               ),
@@ -102,17 +103,18 @@ class _SignupState extends State<Signup> {
               Padding(
                 padding: const EdgeInsets.only(top: 27),
                 child: Container(
+                  alignment: Alignment.center,
                   height: 6.5.h,
                   width: 85.w,
                   decoration: BoxDecoration(
                       color: HexColor('#F2F2F4'),
                       borderRadius: BorderRadius.circular(10)),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10, top: 1),
                     child: TextField(
                       style: TextStyle(color: HexColor('#616161')),
                       decoration: InputDecoration(
-                        hintText: 'E-mail',
+                        hintText: '   E-mail',
                         hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -126,6 +128,7 @@ class _SignupState extends State<Signup> {
               Padding(
                 padding: const EdgeInsets.only(top: 18),
                 child: Container(
+                  alignment: Alignment.center,
                   height: 6.5.h,
                   width: 85.w,
                   decoration: BoxDecoration(
@@ -136,7 +139,7 @@ class _SignupState extends State<Signup> {
                     child: TextField(
                       style: TextStyle(color: HexColor('#616161')),
                       decoration: InputDecoration(
-                        hintText: 'Username',
+                        hintText: '   Username',
                         hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -150,6 +153,7 @@ class _SignupState extends State<Signup> {
               Padding(
                 padding: const EdgeInsets.only(top: 18),
                 child: Container(
+                  alignment: Alignment.center,
                   height: 6.5.h,
                   width: 85.w,
                   decoration: BoxDecoration(
@@ -160,7 +164,7 @@ class _SignupState extends State<Signup> {
                     child: TextField(
                       style: TextStyle(color: HexColor('#616161')),
                       decoration: InputDecoration(
-                        hintText: 'Password',
+                        hintText: '   Password',
                         hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -174,6 +178,7 @@ class _SignupState extends State<Signup> {
               Padding(
                 padding: const EdgeInsets.only(top: 18),
                 child: Container(
+                  alignment: Alignment.center,
                   height: 6.5.h,
                   width: 85.w,
                   decoration: BoxDecoration(
@@ -184,7 +189,7 @@ class _SignupState extends State<Signup> {
                     child: TextField(
                       style: TextStyle(color: HexColor('#616161')),
                       decoration: InputDecoration(
-                        hintText: 'Repeat password',
+                        hintText: '   Repeat password',
                         hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -310,7 +315,7 @@ class _SignupState extends State<Signup> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const signin()),
+                                builder: (context) => const Transition()),
                           );
                         },
                         child: Text(
@@ -332,3 +337,4 @@ class _SignupState extends State<Signup> {
     );
   }
 }
+ */

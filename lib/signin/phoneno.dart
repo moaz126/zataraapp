@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/signin/country.dart';
+import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/transition.dart';
 import 'package:zataraapp/signin/verifyphone.dart';
+import 'package:zataraapp/signup/phonevarifyCode.dart';
 import 'package:zataraapp/signup/signup.dart';
 
 import 'package:country_pickers/country.dart';
 
 import 'package:country_pickers/country_pickers.dart';
+import 'package:zataraapp/signup/varifyCode.dart';
 
 class phoneno extends StatefulWidget {
   const phoneno({Key? key}) : super(key: key);
@@ -41,7 +45,7 @@ class _phonenoState extends State<phoneno> {
               padding: EdgeInsets.only(left: 3.h, bottom: 1.h),
               alignment: Alignment.topLeft,
               child: Text(
-                "Welcome Back",
+                "Create Your Account",
                 style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 20,
@@ -203,9 +207,10 @@ class _phonenoState extends State<phoneno> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 18, left: 25),
+                  padding: const EdgeInsets.only(top: 18, left: 26),
                   child: Container(
                     height: 6.5.h,
+                    width: 20.w,
                     //width: 20.w,
                     decoration: BoxDecoration(
                         color: HexColor('#F2F2F4'),
@@ -254,7 +259,7 @@ class _phonenoState extends State<phoneno> {
                   padding: const EdgeInsets.only(top: 18, left: 10),
                   child: Container(
                     height: 6.5.h,
-                    width: 63.w,
+                    width: 62.5.w,
                     decoration: BoxDecoration(
                         color: HexColor('#F2F2F4'),
                         borderRadius: BorderRadius.circular(10)),
@@ -291,7 +296,8 @@ class _phonenoState extends State<phoneno> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => varifyphone()),
+                        MaterialPageRoute(
+                            builder: (context) => phonevarifycode()),
                       );
                     },
                     child: Text(
@@ -386,7 +392,7 @@ class _phonenoState extends State<phoneno> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Don’t have an account?',
+                    'Already have an account?',
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 12,
@@ -396,14 +402,14 @@ class _phonenoState extends State<phoneno> {
                     padding: const EdgeInsets.only(left: 2.0),
                     child: InkWell(
                       onTap: () {
-                         Navigator.push(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Signup()),
+                              builder: (context) => const Transition()),
                         );
                       },
                       child: Text(
-                        'Sign up',
+                        'Sign In',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 12,

@@ -5,6 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sizer/sizer.dart';
 import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/transition.dart';
 
 class VarifyCode extends StatefulWidget {
   const VarifyCode({Key? key}) : super(key: key);
@@ -106,7 +107,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 child: RichText(
                   text: TextSpan(
                       text:
-                          "Please type the varification code send to roya****gmail.com",
+                          "Please type the verification code send to roya****gmail.com",
                       children: [
                         /* TextSpan(
                             text: "${widget.phoneNumber}",
@@ -117,7 +118,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                       ],
                       style: TextStyle(
                           color: HexColor('#616161'),
-                          fontSize: 12,
+                          fontSize: 13,
                           fontWeight: FontWeight.w400)),
                   textAlign: TextAlign.center,
                 ),
@@ -148,7 +149,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         animationType: AnimationType.fade,
                         validator: (v) {
                           if (v!.length < 3) {
-                            return "I'm from validator";
+                            return "Incorrect OTP";
                           } else {
                             return null;
                           }
@@ -234,51 +235,47 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 textAlign: TextAlign.center,
                 style: TextStyle(color: HexColor('#FF2501')),
               ),
-              const SizedBox(
-                height: 103,
+              SizedBox(
+                height: 8.h,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 18),
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 16.0, horizontal: 30),
-                  height: 6.5.h,
-                  width: 85.w,
-                  decoration: BoxDecoration(
-                      color: HexColor('#FF2501'),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: FlatButton(
-                      onPressed: () {
-                        formKey.currentState!.validate();
-                        // conditions for validating
-                        if (currentText.length != 6 ||
-                            currentText != "123456") {
-                          errorController!.add(ErrorAnimationType
-                              .shake); // Triggering error shake animation
-                          setState(() => hasError = true);
-                        } else {
-                          setState(
-                            () {
-                              hasError = false;
-                              snackBar("OTP Verified!!");
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const signin()),
-                              );
-                            },
-                          );
-                        }
-                      },
-                      child: Text(
-                        "Continue",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: HexColor('#FFFFFF'),
-                        ),
-                      )),
-                ),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
+                height: 6.5.h,
+                width: 85.w,
+                decoration: BoxDecoration(
+                    color: HexColor('#FF2501'),
+                    borderRadius: BorderRadius.circular(10)),
+                child: FlatButton(
+                    onPressed: () {
+                      formKey.currentState!.validate();
+                      // conditions for validating
+                      if (currentText.length != 6 || currentText != "123456") {
+                        errorController!.add(ErrorAnimationType
+                            .shake); // Triggering error shake animation
+                        setState(() => hasError = true);
+                      } else {
+                        setState(
+                          () {
+                            hasError = false;
+                            snackBar("OTP Verified!!");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Transition()),
+                            );
+                          },
+                        );
+                      }
+                    },
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: HexColor('#FFFFFF'),
+                      ),
+                    )),
               ),
               const SizedBox(
                 height: 16,
