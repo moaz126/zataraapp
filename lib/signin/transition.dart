@@ -157,11 +157,11 @@ class _TransitionState extends State<Transition> {
                                 color: HexColor('#F2F2F4'),
                                 borderRadius: BorderRadius.circular(10)),
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 20),
                               child: TextField(
                                 style: TextStyle(color: HexColor('#616161')),
                                 decoration: InputDecoration(
-                                  hintText: '   E-mail',
+                                  hintText: 'E-mail',
                                   hintStyle: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
@@ -182,7 +182,7 @@ class _TransitionState extends State<Transition> {
                                 color: HexColor('#F2F2F4'),
                                 borderRadius: BorderRadius.circular(10)),
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 20),
                               child: TextField(
                                 obscureText: eye,
                                 obscuringCharacter: '*',
@@ -199,7 +199,7 @@ class _TransitionState extends State<Transition> {
                                         color: HexColor('#616161'),
                                         size: 20,
                                       )),
-                                  hintText: '   Password',
+                                  hintText: 'Password',
                                   hintStyle: TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,

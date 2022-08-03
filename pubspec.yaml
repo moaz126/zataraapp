@@ -32,6 +32,7 @@ dependencies:
   custom_info_window: ^1.0.1
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^9.7.0
   flutter_rating_bar: ^4.0.1
   flutter_svg: ^1.1.1+1
   font_awesome_flutter: ^10.1.0

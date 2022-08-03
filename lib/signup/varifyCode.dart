@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sizer/sizer.dart';
+import 'package:zataraapp/homepage/home.dart';
 import 'package:zataraapp/signin/signin.dart';
+import 'package:zataraapp/signin/sucessbox.dart';
 import 'package:zataraapp/signin/transition.dart';
 
 class VarifyCode extends StatefulWidget {
@@ -258,11 +260,21 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         setState(
                           () {
                             hasError = false;
-                            snackBar("OTP Verified!!");
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Transition()),
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (BuildContext context) {
+                                return SuccessDialogBox(
+                                  message: 'Register Successfully ',
+                                  function: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => Transition(),
+                                        ));
+                                  },
+                                );
+                              },
                             );
                           },
                         );

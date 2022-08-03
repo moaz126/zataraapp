@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
+import 'package:zataraapp/api/notification_api.dart';
 import 'package:zataraapp/signin/phoneno.dart';
 import 'package:zataraapp/signin/signin.dart';
 import 'package:zataraapp/signin/transition.dart';
@@ -159,11 +160,11 @@ class _signuptransitionState extends State<signuptransition> {
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 10, top: 1),
+                                    const EdgeInsets.only(left: 20, top: 1),
                                 child: TextField(
                                   style: TextStyle(color: HexColor('#616161')),
                                   decoration: InputDecoration(
-                                    hintText: '   E-mail',
+                                    hintText: 'E-mail',
                                     hintStyle: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
@@ -184,11 +185,11 @@ class _signuptransitionState extends State<signuptransition> {
                                   color: HexColor('#F2F2F4'),
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: TextField(
                                   style: TextStyle(color: HexColor('#616161')),
                                   decoration: InputDecoration(
-                                    hintText: '   Username',
+                                    hintText: 'Username',
                                     hintStyle: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
@@ -209,11 +210,11 @@ class _signuptransitionState extends State<signuptransition> {
                                   color: HexColor('#F2F2F4'),
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: TextField(
                                   style: TextStyle(color: HexColor('#616161')),
                                   decoration: InputDecoration(
-                                    hintText: '   Password',
+                                    hintText: 'Password',
                                     hintStyle: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
@@ -234,11 +235,11 @@ class _signuptransitionState extends State<signuptransition> {
                                   color: HexColor('#F2F2F4'),
                                   borderRadius: BorderRadius.circular(10)),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: TextField(
                                   style: TextStyle(color: HexColor('#616161')),
                                   decoration: InputDecoration(
-                                    hintText: '   Repeat password',
+                                    hintText: 'Repeat password',
                                     hintStyle: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
@@ -416,15 +417,23 @@ class _signuptransitionState extends State<signuptransition> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(26, 0, 0, 0),
-                      child: Container(
-                        height: 6.5.h,
-                        width: 27.w,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: HexColor('#F2F2F4')),
-                        child: Image.asset(
-                          'assets/icons/google.png',
-                          scale: 0.5.h,
+                      child: InkWell(
+                        onTap: () {
+                          /*  NotificationApi.showNotification(
+                              title: 'moaz',
+                              body: 'Hey! How are you doing...',
+                              payload: 'moaz.zia'); */
+                        },
+                        child: Container(
+                          height: 6.5.h,
+                          width: 27.w,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: HexColor('#F2F2F4')),
+                          child: Image.asset(
+                            'assets/icons/google.png',
+                            scale: 0.5.h,
+                          ),
                         ),
                       ),
                     ),

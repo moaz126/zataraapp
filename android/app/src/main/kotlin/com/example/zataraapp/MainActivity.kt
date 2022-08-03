@@ -1,4 +1,4 @@
-package com.example.zataraapp
+package com.zatara.app
 
 import io.flutter.embedding.android.FlutterActivity
 

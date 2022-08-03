@@ -11,10 +11,10 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+        /*  appBar: AppBar(
           toolbarHeight: 25,
           leading: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 19),
+            padding: const EdgeInsets.only(top: 10, left: 18),
             child: InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -27,10 +27,12 @@ class AccountPage extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
           elevation: 0,
-        ),
-        body: Center(
+        ), */
+        body: Stack(
+      children: [
+        Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.only(top: 70),
             child: Column(
               children: [
                 // CircleAvatar(
@@ -41,6 +43,9 @@ class AccountPage extends StatelessWidget {
                 //
                 //   ),
                 // ),
+                SizedBox(
+                  height: 50,
+                ),
                 CircleAvatar(
                   radius: 90,
                   backgroundColor: primary,
@@ -216,6 +221,39 @@ class AccountPage extends StatelessWidget {
               ],
             ),
           ),
-        ));
+        ),
+        Positioned(
+          top: 5.h,
+          right: 9.w,
+          left: 9.w,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 5.h,
+            color: Colors.transparent,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(
+                      context,
+                    );
+                  },
+                  child: Container(
+                    height: 20,
+                    width: 20,
+                    alignment: Alignment.topLeft,
+                    child: Image.asset(
+                      'assets/icons/back.png',
+                      height: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ));
   }
 }

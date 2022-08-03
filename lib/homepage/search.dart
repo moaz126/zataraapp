@@ -20,7 +20,7 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: EdgeInsets.only(left: 10.w, right: 10.w),
+      padding: EdgeInsets.only(left: 9.w, right: 9.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +31,7 @@ class _SearchState extends State<Search> {
               );
             },
             child: Container(
-              height: 70,
+              height: 65,
               width: 5.h,
               padding: EdgeInsets.only(top: 40, left: 0),
               alignment: Alignment.bottomLeft,
@@ -161,7 +161,7 @@ class _SearchState extends State<Search> {
             height: 2.h,
           ),
           Container(
-            width: 78.w,
+            width: 79.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -194,7 +194,7 @@ class _SearchState extends State<Search> {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  width: 31.w,
+                  width: 32.w,
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -226,7 +226,7 @@ class _SearchState extends State<Search> {
             height: 1.h,
           ),
           Container(
-            width: 78.w,
+            width: 79.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -283,7 +283,7 @@ class _SearchState extends State<Search> {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  width: 24.w,
+                  width: 25.w,
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -315,7 +315,7 @@ class _SearchState extends State<Search> {
             height: 1.h,
           ),
           Container(
-            width: 78.w,
+            width: 79.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -348,7 +348,7 @@ class _SearchState extends State<Search> {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  width: 31.w,
+                  width: 32.w,
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -383,7 +383,7 @@ class _SearchState extends State<Search> {
 
   _showSearchBox() {
     return Container(
-      width: 80.w,
+      width: 82.w,
       decoration: BoxDecoration(
           color: HexColor('#F2F2F4'), borderRadius: BorderRadius.circular(10)),
       child: Stack(
